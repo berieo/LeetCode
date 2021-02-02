@@ -1,5 +1,5 @@
-class Solution {
-    public boolean isMatch(String s, String p) {
+class IsMatch {
+    public static boolean isMatch(String s, String p) {
         int m = s.length();
         int n = p.length();
 
@@ -22,7 +22,7 @@ class Solution {
         return f[m][n];
     }
 
-    public boolean matches(String s, String p, int i, int j) {
+    public static boolean matches(String s, String p, int i, int j) {
         if (i == 0) {
             return false;
         }
@@ -30,5 +30,11 @@ class Solution {
             return true;
         }
         return s.charAt(i - 1) == p.charAt(j - 1);
+    }
+
+    public static void main(String[] args){
+        String s = "aaa";
+        String p = "a*a";
+        System.out.println(isMatch(s, p));
     }
 }
